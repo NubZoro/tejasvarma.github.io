@@ -447,6 +447,18 @@ footer{padding:16px 40px;border-top:1px solid var(--border);display:flex;justify
 /* char-card breathe applied after fade-up completes */
 .char-card.loaded{animation:card-breathe 4s ease-in-out infinite;opacity:1}
 
+/* DEMO REEL */
+#reel{padding-top:clamp(60px,7vw,90px)}
+.reel-frame{max-width:900px;margin:0 auto;position:relative;background:var(--panel);border:1px solid var(--border);clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,24px 100%,0 calc(100% - 24px));padding:6px;animation:card-breathe 4s ease-in-out infinite}
+.reel-frame::before{content:'';position:absolute;width:16px;height:16px;top:-1px;right:20px;border-top:2px solid var(--yellow);border-right:2px solid var(--yellow);z-index:3;pointer-events:none}
+.reel-frame::after{content:'';position:absolute;width:16px;height:16px;bottom:-1px;left:20px;border-bottom:2px solid var(--pink);border-left:2px solid var(--pink);z-index:3;pointer-events:none}
+.reel-video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000}
+.reel-video-wrap iframe,.reel-video-wrap video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.reel-video-wrap::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.08) 3px,rgba(0,0,0,.08) 4px);pointer-events:none;z-index:2}
+.reel-caption{display:flex;justify-content:space-between;align-items:center;padding:12px 10px 4px;font-family:'Share Tech Mono',monospace;font-size:.62rem;letter-spacing:.14em;color:var(--muted)}
+.reel-caption .rc-live{color:var(--cyan)}
+.reel-caption .rc-live::before{content:'●';margin-right:5px;animation:pip 2s ease-in-out infinite}
+
 /* Attr bar shimmer */
 @keyframes bar-shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
 .attr-fill::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 30%,rgba(255,255,255,.25) 50%,transparent 70%);background-size:200% 100%;animation:bar-shimmer 2.2s ease-in-out infinite 4s;}
@@ -742,6 +754,7 @@ footer{padding:16px 40px;border-top:1px solid var(--border);display:flex;justify
   <a class="nav-logo" href="#hero">TV.EXE</a>
   <div class="nav-mini"><div class="nav-pip"></div><span class="nav-status">WATSON // ONLINE</span></div>
   <ul class="nav-links">
+    <li><a href="#reel">Reel</a></li>
     <li><a href="#quests">Work</a></li>
     <li><a href="#journal">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -789,6 +802,27 @@ footer{padding:16px 40px;border-top:1px solid var(--border);display:flex;justify
         <a class="cc-link" href="https://www.linkedin.com/in/pericherla-tejas-varma/" target="_blank">LINKEDIN ↗</a>
         <a class="cc-link" href="https://www.instagram.com/nubzoro" target="_blank">INSTAGRAM ↗</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO REEL -->
+<section id="reel">
+  <div class="sec-label">00 &middot; Braindance // Demo Reel</div>
+  <h2 class="sec-title reveal">The <span>Reel</span></h2>
+  <div class="reel-frame reveal">
+    <div class="reel-video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+        title="Tejas Varma — Demo Reel"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="reel-caption">
+      <span>2025 SHOWREEL // GAME DEV &middot; 3D ART &middot; DESIGN</span>
+      <span class="rc-live">STREAMING</span>
     </div>
   </div>
 </section>
